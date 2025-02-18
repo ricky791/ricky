@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>调研成果时间轴</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SolidZORO/zpix-pixel-font@latest/dist/zpix.css"> -->
+</head>
+<body style="background-image: url('images/night-sky.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
+    <header>
+        <h1>调研成果时间轴</h1>
+        <nav>
+            <select id="era-select">
+                <option value="all">所有时代</option>
+                <option value="公元前40世纪">公元前40世纪</option>
+                <option value="公元前19世纪">公元前19世纪</option>
+                <option value="公元前16世纪">公元前16世纪</option>
+                <option value="公元前5世纪">公元前5世纪</option>
+                <option value="12世纪">12世纪</option>
+                <option value="14世纪">14世纪</option>
+                <option value="16世纪">16世纪</option>
+                <option value="19世纪">19世纪</option>
+                <option value="20世纪">20世纪</option>
+            </select>
+            <input type="text" id="search" placeholder="搜索...">
+        </nav>
+    </header>
+
+    <main>
+        <div class="star" style="top: 10%; left: 20%;"></div>
+        <div class="star" style="top: 30%; left: 50%;"></div>
+        <div class="star" style="top: 70%; left: 80%;"></div>
+        <!-- 添加更多星星... -->
+    </main>
+
+    <div class="timeline">
+        <div class="timeline-line"></div>
+        <div class="timeline-content">
+            <!-- 时间节点将通过JavaScript动态添加 -->
+        </div>
+    </div>
+
+    <!-- 添加一个新的div来容纳圣经动图 -->
+    <div id="bible-container" class="hidden">
+        <img src="images/bible.gif" alt="圣经动图" id="bible-image">
+    </div>
+
+    <script src="timeline.js"></script>
+</body>
+</html>
