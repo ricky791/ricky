@@ -1,50 +1,37 @@
 /* 更新字体导入 */
 @font-face {
   font-family: 'PixelFont';
-  src: url('fonts/BoutiqueBitmap9x9_1.9（常规体）.ttf') format('truetype');
+  src: url('BoutiqueBitmap9x9_1.9（常规体）.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 body {
   font-family: 'PixelFont', Arial, sans-serif;
-  font-size: 14px; /* 从 12px 增加到 14px */
-  background-image: url('images/night-sky.jpg');
+  font-size: 14px;
+  background-image: url('night-sky.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
-/* 删除或注释掉以下代码块
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(255, 255, 255, 0.7);
-  z-index: -1;
-}
-*/
-
 .timeline {
-  position: fixed; /* 改为固定定位 */
-  bottom: 20px; /* 距离底部20px */
+  position: fixed;
+  bottom: 20px;
   left: 0;
   right: 0;
   width: 100%;
-  height: 200px; /* 减小高度 */
+  height: 200px;
   overflow-x: auto;
   overflow-y: hidden;
   cursor: grab;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  z-index: 100; /* 确保时间轴在其他元素之上 */
+  z-index: 100;
 }
 
 .timeline::-webkit-scrollbar {
-  display: none; /* 用于 Chrome, Safari 和 Opera */
+  display: none;
 }
 
 .timeline-line {
@@ -65,17 +52,17 @@ body::before {
   transition: transform 0.3s ease;
   will-change: transform;
   z-index: 2;
-  padding-left: 100px; /* 减小左右内边距 */
+  padding-left: 100px;
   padding-right: 100px;
 }
 
 .timeline-node {
   position: relative;
   flex-shrink: 0;
-  width: 30px; /* 减小节点大小 */
+  width: 30px;
   height: 30px;
-  margin: 0 50px; /* 减小节点间距 */
-  background-image: url('images/star.png');
+  margin: 0 50px;
+  background-image: url('star.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -104,20 +91,20 @@ body::before {
 
 .timeline-label {
   position: absolute;
-  bottom: -30px; /* 调整标签位置 */
+  bottom: -30px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 10px; /* 减小标签字体大小 */
+  font-size: 10px;
   white-space: nowrap;
-  color: #F5F5DC; /* 改为米白色 */
+  color: #F5F5DC;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
   font-weight: bold;
-  transition: color 0.3s ease; /* 添加过渡效果 */
+  transition: color 0.3s ease;
 }
 
 .timeline-node:hover .timeline-label {
-  color: #FFD700; /* 鼠标悬停时变为金黄色 */
-  animation: pulse 0.5s infinite alternate; /* 添加脉冲动画 */
+  color: #FFD700;
+  animation: pulse 0.5s infinite alternate;
 }
 
 @keyframes pulse {
@@ -131,7 +118,7 @@ body::before {
 
 .timeline-preview {
   position: absolute;
-  bottom: 100%; /* 改为相对于节点的顶部定位 */
+  bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
   background-color: white;
@@ -141,8 +128,8 @@ body::before {
   width: 150px;
   display: none;
   font-size: 10px;
-  z-index: 1001; /* 确保弹窗在最上层 */
-  pointer-events: none; /* 防止弹窗影响鼠标事件 */
+  z-index: 1001;
+  pointer-events: none;
 }
 
 .timeline-node:hover .timeline-preview,
@@ -150,55 +137,6 @@ body::before {
   display: block;
 }
 
-/* 添加以下新样式 */
-/*
-footer {
-  position: fixed;
-  bottom: 230px;
-  left: 20px;
-  background-color: transparent;
-  padding: 0;
-  text-align: left;
-  box-shadow: none;
-}
-
-footer button {
-  margin: 0 10px 0 0;
-  padding: 10px;
-  font-size: 12px;
-  color: #8B4513;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.1s ease;
-  position: relative;
-  width: 80px;
-  height: 80px;
-  background-color: transparent;
-}
-
-footer button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #F5F5DC;
-  z-index: -1;
-  image-rendering: pixelated;
-  box-shadow: 
-    inset -4px -4px 0 2px #E6E6CA,
-    inset 4px 4px 0 2px #FFFFF0;
-}
-
-footer button:hover {
-  transform: scale(1.05);
-}
-
-footer button:active {
-  transform: scale(0.95);
-}
-*/
 @keyframes twinkle {
   0% { opacity: 0.5; }
   50% { opacity: 1; }
@@ -214,17 +152,17 @@ footer button:active {
 }
 
 h1 {
-  color: #FFF8DC; /* 米色文字 */
+  color: #FFF8DC;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
   margin-bottom: 15px;
-  font-size: 24px; /* 从 18px 增加到 24px */
+  font-size: 24px;
 }
 
 nav {
   position: relative;
   padding: 15px;
-  border-radius: 0; /* 移除圆角 */
-  background-color: transparent; /* 移除背景色 */
+  border-radius: 0;
+  background-color: transparent;
 }
 
 nav::before {
@@ -234,7 +172,7 @@ nav::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #F5F5DC; /* 米白色 */
+  background-color: #F5F5DC;
   z-index: -1;
   image-rendering: pixelated;
   box-shadow: 
@@ -243,12 +181,12 @@ nav::before {
 }
 
 #era-select, #search {
-  background-color: #FFFFF0; /* 稍微浅一点的米白色 */
-  color: #8B4513; /* 棕色文字 */
-  border: 2px solid #E6E6CA; /* 深米白色边框 */
+  background-color: #FFFFF0;
+  color: #8B4513;
+  border: 2px solid #E6E6CA;
   padding: 5px 10px;
   margin-right: 10px;
-  font-size: 12px; /* 从 10px 增加到 12px */
+  font-size: 12px;
 }
 
 #era-select option {
@@ -262,379 +200,58 @@ header {
   margin-bottom: 20px;
 }
 
-/* 删除或注释掉以下代码块 */
-/*
-.timeline::before,
-.timeline::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 50px;
-  z-index: 3;
-  pointer-events: none;
-}
-
-.timeline::before {
-  left: 0;
-  background: linear-gradient(to right, rgba(0,0,0,0.3), transparent);
-}
-
-.timeline::after {
-  right: 0;
-  background: linear-gradient(to left, rgba(0,0,0,0.3), transparent);
-}
-*/
-
-/* 应用字体到所有需要的元素 */
 body, h1, .timeline-label, #era-select, #search, footer button {
   font-family: 'PixelFont', monospace;
 }
 
 #heart-image, #bird-image {
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    width: 120px;
-    height: auto;
-    display: none;
-    z-index: 1000;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 120px;
+  height: auto;
+  display: none;
+  z-index: 1000;
 }
 
 #bird-image {
-    right: 180px; /* 将鸟图像放在心形图像的左边 */
+  right: 180px;
 }
 
 #corner-image {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 15%; /* 减小最大宽度 */
-    max-height: 25vh; /* 减小最大高度 */
-    width: auto;
-    height: auto;
-    display: none;
-    z-index: 1001;
-    object-fit: contain;
-}
-
-#corner-image.floating {
-    animation: float 3s ease-in-out infinite;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 20%;
+  max-height: 35vh;
+  width: auto;
+  height: auto;
+  display: none;
+  z-index: 1001;
+  object-fit: contain;
 }
 
 @keyframes float {
-    0%, 100% {
-        transform: translate(-50%, -50%);
-    }
-    50% {
-        transform: translate(-50%, calc(-50% - 5px)); /* 减小浮动距离 */
-    }
-}
-
-#left-image, #center-image, #right-image {
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    max-width: 30%;
-    max-height: 90vh;
-    width: auto;
-    height: auto;
-    display: none;
-    z-index: 1000;
-    object-fit: contain;
-}
-
-#left-image {
-    left: 10%;
-}
-
-#center-image {
-    left: 40%;
-}
-
-#right-image {
-    left: 70%;
-}
-
-#corner-image, #left-image {
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    max-height: 90vh;
-    width: auto;
-    height: auto;
-    display: none;
-    z-index: 1000;
-    object-fit: contain;
-}
-
-#corner-image {
-    right: 10%;
-    max-width: 40%;
-}
-
-#left-image {
-    left: 10%;
-    max-width: 40%;
-}
-
-#corner-image, #side-image {
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    max-height: 90vh;
-    width: auto;
-    height: auto;
-    display: none;
-    z-index: 1000;
-    object-fit: contain;
-}
-
-#corner-image {
-    left: 50%;
+  0%, 100% {
     transform: translate(-50%, -50%);
-    max-width: 25%; /* 稍微减小中央图像的最大宽度 */
-    z-index: 1000; /* 确保中央图像在卷轴上方 */
-}
-
-/* 删除或注释掉这分
-#side-image {
-    left: 20%;
-    max-width: 80%;
-    max-height: 95vh;
-    z-index: 999;
-}
-*/
-
-#text-box {
-    position: fixed;
-    top: 50%;
-    left: 10%;
-    transform: translateY(-50%);
-    width: 300px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 2px solid #F5F5DC;
-    border-radius: 10px;
-    padding: 20px;
-    font-size: 14px;
-    color: #8B4513;
-    display: none;
-    z-index: 1000;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-#corner-image {
-    left: 60%; /* 将图像移到右侧 */
-    transform: translate(-50%, -50%);
-    max-width: 30%; /* 减小图像大小以适应文字框 */
-}
-
-#corner-image {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 30%;
-    max-height: 90vh;
-    width: auto;
-    height: auto;
-    display: none;
-    z-index: 1000;
-    object-fit: contain;
-}
-
-#text-box {
-    position: fixed;
-    top: 50%;
-    left: 10%;
-    transform: translateY(-50%);
-    width: 300px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 2px solid #F5F5DC;
-    border-radius: 10px;
-    padding: 20px;
-    font-size: 14px;
-    color: #8B4513;
-    display: none;
-    z-index: 1000;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.text-box {
-    position: fixed;
-    width: 200px; /* 增加宽度 */
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 2px solid #F5F5DC;
-    border-radius: 10px;
-    padding: 10px; /* 增加内边距 */
-    font-size: 12px; /* 稍微增加字体大小 */
-    color: #8B4513;
-    display: none;
-    z-index: 1000;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-#text-box-top {
-    top: 5%;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-#text-box-right {
-    top: 50%;
-    right: 5%;
-    transform: translateY(-50%);
-}
-
-#text-box-bottom {
-    bottom: 30%; /* 向上移动，避免遮挡时间轴 */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 300px;
-    height: auto; /* 自动调整高度 */
-    max-height: none; /* 移除最大高度限制 */
-    overflow-y: visible; /* 移除滚动条 */
-    font-size: 11px;
-    padding: 15px;
-    line-height: 1.4;
-}
-
-#text-box-left {
-    top: 50%;
-    left: 5%;
-    transform: translateY(-50%);
-}
-
-#corner-image {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 20%; /* 稍微减小图像大小 */
-    max-height: 35vh; /* 限制高度 */
-    width: auto;
-    height: auto;
-    display: none;
-    z-index: 1001;
-    object-fit: contain;
-}
-
-/* 移除滚动条相关样式 */
-#text-box-bottom::-webkit-scrollbar,
-#text-box-bottom::-webkit-scrollbar-track,
-#text-box-bottom::-webkit-scrollbar-thumb,
-#text-box-bottom::-webkit-scrollbar-thumb:hover {
-    display: none;
-}
-
-#text-box-left, #text-box-right, #text-box-bottom {
-    position: fixed;
-    width: 200px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 2px solid #F5F5DC;
-    border-radius: 10px;
-    padding: 10px;
-    font-size: 12px;
-    color: #8B4513;
-    display: none;
-    z-index: 1000;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-#text-box-left {
-    top: 30%;
-    left: 10%;
-    transform: translateY(-50%);
-}
-
-#text-box-right {
-    top: 30%;
-    right: 10%;
-    transform: translateY(-50%);
-}
-
-#text-box-bottom {
-    bottom: 20%;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.text-box {
-    position: fixed;
-    width: 200px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 2px solid #F5F5DC;
-    border-radius: 10px;
-    padding: 10px;
-    font-size: 12px;
-    color: #8B4513;
-    display: none;
-    z-index: 1000;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-#text-box-left, #text-box-right {
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-#text-box-left {
-    left: 10%;
-}
-
-#text-box-right {
-    right: 10%;
-}
-
-#text-box-left-bottom, #text-box-right-bottom {
-    bottom: 35%; /* 将底部文本框向上移动 */
-    transform: translateY(0); /* 移除 Y 轴的平移 */
-}
-
-#text-box-left-bottom {
-    bottom: 40%; /* 将底部文本框向上移动 */
-    left: 10%;
-    transform: translateY(0);
-}
-
-/* 如果有右下方的文本框，也可以同样调整 */
-#text-box-right-bottom {
-    bottom: 40%; /* 将底部文本框向上移动 */
-    right: 10%;
-    transform: translateY(0);
-}
-
-/* 其他现有样式保持不变 */
-
-#bible-container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
-    display: none;
-}
-
-#bible-container.show {
-    display: block;
-}
-
-#bible-image {
-    max-width: 80vw;
-    max-height: 80vh;
-    object-fit: contain;
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: translate(-50%, -50%);
-    }
-    50% {
-        transform: translate(-50%, calc(-50% - 10px)); /* 减小浮动距离 */
-    }
+  }
+  50% {
+    transform: translate(-50%, calc(-50% - 10px));
+  }
 }
 
 #corner-image.floating {
-    animation: float 3s ease-in-out infinite;
+  animation: float 3s ease-in-out infinite;
+}
+
+#text-box, .text-box {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid #F5F5DC;
+  border-radius: 10px;
+  color: #8B4513;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  display: none;
+  z-index: 1000;
 }
